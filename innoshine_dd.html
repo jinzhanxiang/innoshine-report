@@ -4,52 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>innoshine_dd.html - 桌面版</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif;color:#1a202c;background:#fff;line-height:1.9;font-size:17px;max-width:1000px;margin:0 auto;padding:24px 20px 60px}
-h1{font-size:24px;color:#1a365d;margin:32px 0 18px;border-bottom:3px solid #d69e2e;padding-bottom:12px;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-h2{font-size:21px;color:#1a365d;margin:36px 0 18px;padding-bottom:8px;border-bottom:1px solid #e2e8f0;font-weight:700;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-h3{font-size:19px;color:#2d3748;margin:28px 0 14px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-h4{font-size:17px;color:#2d3748;margin:22px 0 10px;font-weight:600;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-h5{font-size:17px;color:#2d3748;margin:18px 0 8px;font-weight:600}
-h6{font-size:15px;color:#4a5568;margin:16px 0 6px;font-weight:600}
-p.body-text{margin-bottom:16px;text-align:justify;text-indent:2em;line-height:2.0;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
-p.section-intro{text-indent:0;font-weight:600;margin-top:24px}
-p.numbered-item{text-indent:0;padding-left:1.5em;margin-bottom:8px}
-p.key-finding{text-indent:0;background:linear-gradient(90deg,#fffbeb,transparent);padding:10px 16px;border-left:4px solid #d69e2e;border-radius:0 6px 6px 0;margin:20px 0}
-strong{color:#1a365d}
-.table-wrapper{overflow-x:auto;margin:20px 0}
-table.doc-table{width:100%;border-collapse:collapse;margin:0;font-size:15px;line-height:1.6;table-layout:auto}
-table.doc-table thead{background:#1a365d}
-table.doc-table th{color:#fff;padding:9px 10px;text-align:left;font-size:13px;font-weight:600;white-space:normal;word-wrap:break-word;overflow-wrap:break-word;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-table.doc-table td{padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:14px;vertical-align:top;word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;min-width:75px}
-table.doc-table tbody tr:nth-child(even){background:#f7fafc}
-table.doc-table tbody tr:hover{background:#edf2f7}
-ol.doc-list, ul.doc-list{margin:16px 0 16px 2em}
-ol.doc-list li, ul.doc-list li{margin-bottom:10px;line-height:2.0;font-size:17px;padding-left:4px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
-ol.doc-list{list-style-type:decimal}
-ol.doc-list ol, ul.doc-list ul{margin:8px 0 8px 1.5em}
-details{margin:20px 0;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-details summary{padding:14px 18px;background:linear-gradient(180deg,#f7fafc,#edf2f7);cursor:pointer;font-weight:600;color:#1a365d;font-size:17px;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
-details summary::-webkit-details-marker{display:none}
-details summary::before{content:"▶";display:inline-block;font-size:11px;transition:transform 0.2s;color:#d69e2e}
-details[open] summary::before{transform:rotate(90deg)}
-details summary:hover{background:#edf2f7}
-details[open] summary{border-bottom:1px solid #e2e8f0}
-.details-content{padding:20px 22px}
-.details-content p.body-text:first-child{margin-top:0}
-.details-content p.body-text:last-child{margin-bottom:0}
-.callout{margin:24px 0}
-.callout strong{font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
-blockquote{background:#fffbeb;border-left:3px solid #d69e2e;padding:16px 20px;margin:20px 0;border-radius:0 6px 6px 0;color:#744210;font-size:17px;font-family:"FangSong","仿宋","仿宋_GB2312","STFangsong","Songti SC","Noto Serif CJK SC",serif}
-code{background:#f7fafc;padding:2px 6px;border-radius:3px;font-size:14px}
-pre{background:#1a202c;color:#e2e8f0;padding:18px;border-radius:8px;margin:18px 0;overflow-x:auto;line-height:1.6}
-pre code{background:none;color:inherit;font-size:14px}
-.nav{background:linear-gradient(135deg,#1a365d,#2d3748);padding:14px 20px;margin:-24px -20px 28px;border-radius:0 0 8px 8px;display:flex;gap:20px;flex-wrap:wrap}
-.nav a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:14px;font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
-.nav a:hover{color:#fff;text-decoration:underline}
-hr{border:0;border-top:1px solid #e2e8f0;margin:32px 0}
-</style>
+<link rel="stylesheet" href="https://jinzhanxiang.github.io/tianbao-projects/assets/report.css">
 </head>
 <body>
 <div class="nav">
