@@ -3,70 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>元旭半导体（Innoshine） · 项目报告中心</title>
+<title>元旭半导体 · Innoshine · 项目报告中心</title>
 <link rel="stylesheet" href="https://jinzhanxiang.github.io/tianbao-projects/assets/report.css">
+<style>
+:root {
+  --primary: #1a365d;
+  --accent: #c53030;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #2d3748;
+  --muted: #718096;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.nav { background: var(--primary); color: white; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.nav a { color: white; text-decoration: none; opacity: 0.85; margin-left: 18px; font-size: 14px; }
+.nav a:hover { opacity: 1; }
+.container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+.hero { background: linear-gradient(135deg, var(--primary) 0%, #2c5282 100%); color: white; padding: 40px 32px; border-radius: 12px; margin-bottom: 28px; }
+.hero h1 { font-size: 28px; margin-bottom: 8px; }
+.hero p { opacity: 0.9; font-size: 15px; margin-bottom: 24px; }
+.hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-stat { background: rgba(255,255,255,0.15); padding: 12px 20px; border-radius: 8px; min-width: 110px; }
+.hero-stat .num { font-size: 28px; font-weight: 700; }
+.hero-stat .lbl { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+.tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 24px; }
+.tab { padding: 14px 24px; cursor: pointer; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+.tab:hover { color: var(--primary); }
+.tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+.tab-count { background: var(--primary); color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-left: 6px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
+.tl-item::before { content: ''; position: absolute; left: -28px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid white; box-shadow: 0 0 0 2px var(--primary); }
+.tl-item.tl-main::before { background: var(--primary); }
+.tl-item.tl-thirdparty::before { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.tl-item.tl-meeting::before { background: #d69e2e; box-shadow: 0 0 0 2px #d69e2e; }
+.tl-item.tl-first::before { background: #38a169; box-shadow: 0 0 0 2px #38a169; }
+.tl-date { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.tl-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+.tl-desc { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.tl-link { display: inline-block; padding: 6px 14px; background: var(--primary); color: white; text-decoration: none; border-radius: 6px; font-size: 14px; }
+.tl-link:hover { background: #2c5282; }
+.report-group { margin-bottom: 32px; }
+.rg-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+.r-card { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; text-decoration: none; color: var(--text); transition: all 0.2s; }
+.r-card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(26,54,93,0.1); }
+.r-emoji { font-size: 24px; }
+.r-body { flex: 1; }
+.r-name { font-weight: 600; margin-bottom: 4px; }
+.r-meta { font-size: 13px; color: var(--muted); }
+.r-arrow { color: var(--muted); font-size: 18px; }
+.archived { opacity: 0.7; border-style: dashed; }
+.archived-note { background: #fef5e7; border-left: 4px solid #d69e2e; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; color: #744210; }
+@media (max-width: 768px) {
+  .hero { padding: 24px 20px; }
+  .hero h1 { font-size: 22px; }
+  .hero-stats { gap: 16px; }
+  .tab { padding: 12px 16px; font-size: 14px; }
+}
+</style>
 </head>
 <body>
-<div class="back-nav">
-  <a href="https://jinzhanxiang.github.io/tianbao-projects/">← 返回报告中心</a>
-  <span class="project-title">天保控股 · 项目管理</span>
-</div>
-<div class="hero">
-  <h1>💡 元旭半导体（Innoshine）</h1>
-  <p>化合物半导体材料 · Micro LED 微显示 · 储备·非上市 · 4 份报告 · 双视图导航</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="num">4</div><div class="lbl">报告总数</div></div>
-    <div class="hero-stat"><div class="num">3</div><div class="lbl">时间节点</div></div>
-    <div class="hero-stat"><div class="num">4</div><div class="lbl">报告清单</div></div>
+<div class="nav">
+  <div>📊 元旭半导体 · Innoshine</div>
+  <div>
+    <a href="https://jinzhanxiang.github.io/tianbao-projects/">← 返回主中心</a>
   </div>
 </div>
-<div class="tabs">
-  <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">3</span></div>
-  <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">4</span></div>
-</div>
+
 <div class="container">
-  <div class="tab-panel active" id="panel-timeline">
-    <div class="timeline"><div class="tl-item tl-meeting">
-  <div class="tl-dot"></div>
-  <div class="tl-date">2026-06-22</div>
-  <div class="tl-title">🤝 元旭半导体拜访谈参</div>
-  <div class="tl-desc">为投后谈判准备的现场拜访提纲与议程</div>
-  <div class="tl-links"><a href="https://jinzhanxiang.github.io/innoshine-report/negotiation_brief.html" class="tl-link" target="_blank"><span>🤝</span>访谈提纲</a></div>
-</div><div class="tl-item tl-first">
-  <div class="tl-dot"></div>
-  <div class="tl-date">2026-06</div>
-  <div class="tl-title">💡 元旭半导体（Innoshine）投资分析报告</div>
-  <div class="tl-desc">完整尽调分析，含市场/竞争/估值</div>
-  <div class="tl-links"><a href="https://jinzhanxiang.github.io/innoshine-report/innoshine_dd.html" class="tl-link" target="_blank"><span>💡</span>尽调主报告</a></div>
-</div><div class="tl-item tl-analysis">
-  <div class="tl-dot"></div>
-  <div class="tl-date">2026-06</div>
-  <div class="tl-title">📊 中科恒远穿透查询报告</div>
-  <div class="tl-desc">对中科恒远（重要 LP）做股权穿透</div>
-  <div class="tl-links"><a href="https://jinzhanxiang.github.io/innoshine-report/innoshine_dd.html" class="tl-link" target="_blank"><span>💡</span>查看尽调内含穿透</a></div>
-</div></div>
+  <div class="hero">
+    <h1>元旭半导体 · Innoshine</h1>
+    <p>储备·非上市 · 半导体材料项目 · 储备·非上市 · 2 份有效报告 · 主报告V1 · 部署 2026-07-17</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">2</div><div class="lbl">有效报告</div></div>
+      <div class="hero-stat"><div class="num">0</div><div class="lbl">已归档</div></div>
+      <div class="hero-stat"><div class="num">V1</div><div class="lbl">主报告版本</div></div>
+      <div class="hero-stat"><div class="num">待尽调后填</div><div class="lbl">半导体</div></div>
+    </div>
   </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="timeline">📅 时间线视图<span class="tab-count">2</span></div>
+    <div class="tab" data-tab="reports">📋 全部报告总览<span class="tab-count">2</span></div>
+  </div>
+
+  <div class="tab-panel active" id="panel-timeline">
+    <div class="timeline">
+      <div class="tl-item tl-main">
+        <div class="tl-date">待补</div>
+        <div class="tl-title">📜 尽调报告</div>
+        <div class="tl-desc">元旭半导体尽调主报告</div>
+        <a class="tl-link" href="innoshine_dd.html">📊 查看报告</a>
+      </div>
+      <div class="tl-item ">
+        <div class="tl-date">待补</div>
+        <div class="tl-title">📜 谈判简报</div>
+        <div class="tl-desc">收购谈判要点简报</div>
+        <a class="tl-link" href="negotiation_brief.html">📊 查看报告</a>
+      </div>
+    </div>
+  </div>
+
   <div class="tab-panel" id="panel-reports">
-    <div class="report-group"><div class="rg-title">📋 全部报告</div><div class="rg-grid"><a class="r-card" href="https://jinzhanxiang.github.io/innoshine-report/innoshine_dd.html" target="_blank">
-  <div class="r-emoji">💡</div>
-  <div class="r-body"><div class="r-name">元旭半导体（Innoshine）投资分析报告<span class="r-badgeb' b-main'">尽调主报告</span></div></div>
-  <div class="r-arrow">→</div>
-</a><a class="r-card" href="https://jinzhanxiang.github.io/innoshine-report/innoshine_dd_m.html" target="_blank">
-  <div class="r-emoji">📱</div>
-  <div class="r-body"><div class="r-name">元旭半导体投资分析报告（手机版）<span class="r-badge">手机版</span></div></div>
-  <div class="r-arrow">→</div>
-</a><a class="r-card" href="https://jinzhanxiang.github.io/innoshine-report/negotiation_brief.html" target="_blank">
-  <div class="r-emoji">🤝</div>
-  <div class="r-body"><div class="r-name">元旭半导体（Innoshine/Novoshine）拜访谈参<span class="r-badge">谈判准备</span></div></div>
-  <div class="r-arrow">→</div>
-</a><a class="r-card" href="https://jinzhanxiang.github.io/innoshine-report/index.html" target="_blank">
-  <div class="r-emoji">📋</div>
-  <div class="r-body"><div class="r-name">元旭半导体报告目录</div></div>
-  <div class="r-arrow">→</div>
-</a></div></div>
+    <div class="report-group">
+      <div class="rg-title">📊 主报告</div>
+      <a class="r-card" href="innoshine_dd.html" target="_blank">
+        <div class="r-emoji">📊</div>
+        <div class="r-body">
+          <div class="r-name">尽调报告</div>
+          <div class="r-meta">待补 · 尽调, 主报告</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+    </div>
+    <div class="report-group">
+      <div class="rg-title">📑 其他有效报告</div>
+      <a class="r-card" href="negotiation_brief.html" target="_blank">
+        <div class="r-emoji">📑</div>
+        <div class="r-body">
+          <div class="r-name">谈判简报</div>
+          <div class="r-meta">待补 · 谈判</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center;">
+    📅 主报告V1 更新：2026-07-17 · 双视图 dashboard 自动生成（manifest 派生）<br>
+    🔗 <a href="https://jinzhanxiang.github.io/tianbao-projects/" style="color: var(--primary);">天保控股项目中心</a> · 仓库 jinzhanxiang/innoshine-report
   </div>
 </div>
-<div class="footer">元旭半导体（Innoshine） · 项目报告中心 · 2026-07-09 v2 双视图</div>
+
 <script>
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -74,7 +147,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    window.scrollTo({top:0, behavior:'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'});
   });
 });
 </script>
