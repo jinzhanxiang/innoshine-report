@@ -2,6 +2,11 @@
 # ========================================================
 # 主公 2026-07-17 v12 跨项目推广 · 小仓库示范
 # 模板参考：scripts/manifest/manifest.template.yml
+#
+# _m.html 手机版豁免（v12.1）：
+#   - index_m.html / innoshine_dd_m.html 不入 manifest
+#   - PC 版存在自动跳转，dashboard 不单独展示
+#   - scan / check 自动忽略（见 manifest.py M_VERSION_SUFFIX）
 
 project: innoshine-report
 title: 元旭半导体 · Innoshine
@@ -15,14 +20,14 @@ hero:
   amount: 待尽调后填
   highlight: 储备阶段
 
-# 有效报告（dashboard 展示 · PC 版为主）
+# 有效报告（dashboard 展示）
 reports:
   - file: innoshine_dd.html
     title: 尽调报告
     date: 待补
     status: active
     tags: [尽调, 主报告]
-    desc: 元旭半导体尽调主报告（PC 版）
+    desc: 元旭半导体尽调主报告
     color: main
 
   - file: negotiation_brief.html
@@ -33,13 +38,5 @@ reports:
     desc: 收购谈判要点简报
     color: default
 
-# 已归档 / 隐藏（手机版 _m · PC 版存在自动跳转，不在 dashboard 单独展示）
-deprecated:
-  - file: index_m.html
-    title: 简易目录（手机版）
-    removed: 2026-07-17
-    note: 手机版 · PC 版 index.html 自动跳转，dashboard 不单独展示
-  - file: innoshine_dd_m.html
-    title: 尽调报告（手机版）
-    removed: 2026-07-17
-    note: 手机版 · PC 版 innoshine_dd.html 自动跳转，dashboard 不单独展示
+# 已归档 / 隐藏（历史已删报告 · 不含 _m.html）
+deprecated: []  # 暂无归档报告
